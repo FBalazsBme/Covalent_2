@@ -1,0 +1,28 @@
+#circle{
+  position: fixed;
+  z-index: -1;
+  bottom: 0px;
+  right: 0px;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50px;
+}
+
+.circle-wrapper {
+  height: 100px;
+}
+
+#content{
+  overflow: visible;
+  text-align: center;
+  font-size: 1.5rem;
+}
+#container{
+  width: 100%;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+p {
+  font-family: Lato;
+}
