@@ -1,6 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+main {
+  margin-top: 60px;
+}
+
 #circle{
   position: fixed;
-  z-index: -1;
+  //z-index: -1;
   bottom: 0px;
   right: 0px;
   width: 100px;
@@ -9,20 +19,130 @@
   border-radius: 50px;
 }
 
+#img1{
+  position: relative;
+  z-index: -1;
+}
+
 .circle-wrapper {
   height: 100px;
 }
 
-#content{
-  overflow: visible;
+.container{
+  width: 100%;
+  //flex-wrap: nowrap !important;
+}
+
+.container-white{
+  width: 100%;
+  //flex-wrap: nowrap !important;
+}
+
+.z-index-1{
+  z-index: 1;
+}
+
+.z-index--1{
+  z-index: -1;
+}
+
+.height-20 {
+  height: 20em;
+}
+
+.height-12 {
+  height: 12em;
+}
+
+.buffer content-white {
+  position: fixed;
+}
+
+.content-white{
+  display: block;
+  width: 100%;
+  overflow: hidden;
   text-align: center;
   font-size: 1.5rem;
+  background: white;
 }
-#container{
+
+.content-transparent{
   width: 100%;
-  display: flex !important;
-  flex-wrap: nowrap !important;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1.5rem;
+  background: transparent;
 }
+
 p {
   font-family: Lato;
+}
+
+img {
+  width: 100%;
+}
+
+.parallax-container {
+  perspective: 1px;
+  height: calc(100vh - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-group {
+  transform-style: preserve-3d;
+  z-index: -1;
+  width: 100%;
+
+  // sits in front of parallax items
+  // background: blue;
+
+  .parallax-layer {
+    position: absolute;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
+
+  //a képszélességi probléma a transform és a transform-style-ban van, de nem tudom hogy lehetne megoldani
+  .img {
+    width: 100%;
+    transform: translateZ(-7px) scale(7);
+  }
+
+  .rslow {
+    width: 100%;
+    transform: translateZ(-7px) scale(6);
+  }
+
+  .slower {
+    position: absolute;
+    padding: 10px;
+    bottom: 10px;
+    right: 0px;
+    background: seagreen;
+    transform: translateZ(-0.8px) scale(1.8);
+  }
+
+  .faster {
+    position: absolute;
+    padding: 10px;
+    top: 400px;
+    left: 10px;
+    background: gold;
+    transform: translateZ(-0.2px) scale(1.2);
+  }
+}
+
+.section {
+  height: 500px;
+}
+
+.content-section {
+  background: orange;
+  border: 10px solid #eb8b00;
+
+  & + & {
+    margin-top: 10px;
+  }
 }
